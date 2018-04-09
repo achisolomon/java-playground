@@ -24,27 +24,27 @@ public class MessageMapTest {
 	@Before
 	public void setUp() throws Exception {
 		msgmap = new MessageMap();
-		msgmap.addMessageToSender("Achi1");
-		msgmap.addMessageToSender("Achi2");
-		msgmap.addMessageToSender("Achi2");
-		msgmap.addMessageToSender("Achi3");
-		msgmap.addMessageToSender("Achi3");
-		msgmap.addMessageToSender("Achi3");
-		msgmap.addMessageToSender("Achi4");
-		msgmap.addMessageToSender("Achi4");
-		msgmap.addMessageToSender("Achi4");
-		msgmap.addMessageToSender("Achi4");
+		msgmap.addMessageToSender("Achi1", "someone ", "hi");
+		msgmap.addMessageToSender("Achi2", "someone ", "hi");
+		msgmap.addMessageToSender("Achi2", "someone ", "hi");
+		msgmap.addMessageToSender("Achi3", "someone ", "hi");
+		msgmap.addMessageToSender("Achi3", "someone ", "hi");
+		msgmap.addMessageToSender("Achi3", "someone ", "hi");
+		msgmap.addMessageToSender("Achi4", "someone ", "hi");
+		msgmap.addMessageToSender("Achi4", "someone ", "hi");
+		msgmap.addMessageToSender("Achi4", "someone ", "hi");
+		msgmap.addMessageToSender("Achi4", "someone ", "hi");
 		
-		msgmap.addMessageToSender("Achi5");
-		msgmap.addMessageToSender("Achi5");
-		msgmap.addMessageToSender("Achi5");
-		msgmap.addMessageToSender("Achi5");
-		msgmap.addMessageToSender("Achi5");
-		msgmap.addMessageToSender("Veronique");
-		msgmap.addMessageToSender("Orianne");
-		msgmap.addMessageToSender("Eden");
-		msgmap.addMessageToSender("Frida");
-		msgmap.addMessageToSender("Kobi");
+		msgmap.addMessageToSender("Achi5", "someone ", "hi");
+		msgmap.addMessageToSender("Achi5", "someone ", "hi");
+		msgmap.addMessageToSender("Achi5", "someone ", "hi");
+		msgmap.addMessageToSender("Achi5", "someone ", "hi");
+		msgmap.addMessageToSender("Achi5", "someone ", "hi");
+		msgmap.addMessageToSender("Veronique", "someone ", "hi");
+		msgmap.addMessageToSender("Orianne", "someone ", "hi");
+		msgmap.addMessageToSender("Eden", "someone ", "hi");
+		msgmap.addMessageToSender("Frida", "someone ", "hi");
+		msgmap.addMessageToSender("Kobi", "someone ", "hi");
 		
 	}
 
@@ -59,11 +59,10 @@ public class MessageMapTest {
 	public void test() {
 		
 		List l =  msgmap.getTenPrecentSenders();
-		assertTrue("chcek if the list size is 4 ", l.size() == 4);
-		assertTrue("chcek if the list size is 4 ", l.contains("Achi2"));
-		assertTrue("chcek if the list size is 4 ", l.contains("Achi3"));
-		assertTrue("chcek if the list size is 4 ", l.contains("Achi4"));
-		assertTrue("chcek if the list size is 4 ", l.contains("Achi5"));
+		assertTrue("check if the list size is 4 ", l.size() == 4);
+		assertTrue("check if the list size is 4 ", l.contains("Achi2"));
+		assertTrue("check if the list size is 4 ", l.contains("Achi3"));
+		assertTrue("check if the list size is 4 ", l.contains("Achi4"));
 	}
 
 }

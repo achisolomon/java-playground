@@ -11,28 +11,29 @@ import java.util.List;
 import java.util.Map;
 
 public class MessageMap implements Serializable {
-	Map<String, Integer> messages = null;
+	Map<Message, Integer> messages = null;
 	Integer total_senders = 0;
 
 	MessageMap() {
-		messages = new HashMap<String, Integer>();
+		messages = new HashMap<Message, Integer>();
 	}
 
-	public void addMessageToSender(String senderAddress) {
+	public void addMessageToSender(String senderAddress , String reciver_address, String body) {
 		++total_senders;
-
-		Integer isInMap = messages.get(senderAddress);
+		Message msg = new Message(senderAddress, reciver_address, body);
+		
+		Integer isInMap = messages.get(msg);
 		if (isInMap == null) {
-			messages.put(senderAddress, 1);
+			messages.put(msg, 1);
 		} else {
-			messages.put(senderAddress, ++isInMap);
+			messages.put(msg, ++isInMap);
 		}
 	}
 
-	public List<String> getTenPrecentSenders() {
-		List<String> tenPrecentList = new LinkedList<String>(); 
+	public List<Message> getTenPrecentSenders() {
+		List<Message> tenPrecentList = new LinkedList<Message>(); 
 		
-		for ( Map.Entry<String, Integer> it : messages.entrySet())
+		for ( Map.Entry<Message, Integer> it : messages.entrySet())
 		{
 			Integer occur = it.getValue(); 
 			if ( occur.floatValue() / total_senders.floatValue() > 0.1 )
